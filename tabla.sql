@@ -82,7 +82,7 @@ updated_at datetime DEFAULT NULL,
 deleted_at datetime DEFAULT NULL
 );
 
- CREATE TABLE `user` (
+ CREATE TABLE `users` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -96,4 +96,4 @@ deleted_at datetime DEFAULT NULL
 );
 
 
-INSERT INTO `user`(id, name, email, email_verified_at, password,  remember_token, created_at, updated_at) VALUES (1,'usuario','usuario@usuario.com',NULL,'$2y$10$om5sEc.3.Gi9Uf6S9NU0DeY7u6rJO9YQDud3L9rC46TtD/ON35/6G',NULL,'2024-08-13 02:25:25','2024-08-13 02:25:25');
+INSERT INTO `users`(id, name, email, email_verified_at, password,  remember_token, created_at, updated_at) VALUES (1,'usuario','usuario@usuario.com',NULL,'$2y$10$om5sEc.3.Gi9Uf6S9NU0DeY7u6rJO9YQDud3L9rC46TtD/ON35/6G',NULL,'2024-08-13 02:25:25','2024-08-13 02:25:25');
