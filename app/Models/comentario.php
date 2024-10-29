@@ -12,17 +12,23 @@ class Comentario extends Model
     use SoftDeletes;
     protected $table = "comentario";
 
-    public function Post()
-    {
-        return $this->belongsTo(Post::class);
-    }
-    public function megusta()
-    {
-        return $this->hasMany(comentario::class);
-    }
-
     public function usuario()
     {
-        return $this->belongsTo(usuario::class);
+        return $this->belongsTo(Usuario::class, 'usuario_id', 'id');
+    }
+
+    public function post()
+    {
+        return $this->belongsTo(Post::class, 'post_id', 'id'); 
+    }
+
+    public function eventos()
+    {
+        return $this->belongsToMany(Evento::class, 'c_evento', 'comentario_id', 'evento_id');
+    }
+
+    public function lugares()
+    {
+        return $this->belongsToMany(Lugar::class, 'c_lugar', 'comentario_id', 'lugar_id');
     }
 }

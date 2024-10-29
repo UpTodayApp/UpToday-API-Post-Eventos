@@ -7,85 +7,55 @@ use App\Models\megusta;
 
 class MegustaController extends Controller
 {
-    public function CrearPost(Request $request)
+    
+    public function Crear(Request $request)
     {
-        if ($request->has("usuario_id")) {
-
-
+        if ($request->has("usuario_id") && ($request->has("post_id") || $request->has("comentario_id"))) {
             $megusta = new megusta();
             $megusta->usuario_id = $request->post("usuario_id");
-            $megusta->post_id = $request->post("post_id");
+            
+            if ($request->has("post_id")) {
+                $megusta->post_id = $request->post("post_id");
+            } else {
+                $megusta->comentario_id = $request->post("comentario_id");
+            }
+
             $megusta->save();
             return $megusta;
         }
         return response()->json(["error mesage" => "error al crear me gusta"]);
     }
 
-    public function ListarTodasPost(Request $request)
+    public function ListarTodas(Request $request)
     {
         return megusta::all();
     }
 
-    public function ListarUnaPost(Request $request, $id)
+    public function ListarUna(Request $request, $id)
     {
         return megusta::findOrFail($id);
     }
 
-    public function EliminarPost(Request $request, $id)
+    public function Eliminar(Request $request, $id)
     {
         $megusta = megusta::findOrFail($id);
         $megusta->delete();
         return ['mensaje' => 'Me gusta post eliminado'];
     }
 
-    public function ModificarPost(Request $request, $id)
+    public function Modificar(Request $request, $id)
     {
         $megusta = megusta::findOrFail($id);
         $megusta->usuario_id = $request->post("usuario_id");
-        $megusta->post_id = $request->post("post_id");
-        $megusta->save();
-        return $megusta;
-    }
 
-
-
-    public function CrearComentario(Request $request)
-    {
-        if ($request->has("usuario_id")) {
-
-
-            $megusta = new megusta();
-            $megusta->usuario_id = $request->post("usuario_id");
+        if ($request->has("post_id")) {
+            $megusta->post_id = $request->post("post_id");
+        } else if ($request->has("comentario_id")) {
             $megusta->comentario_id = $request->post("comentario_id");
-            $megusta->save();
-            return $megusta;
         }
-        return response()->json(["error mesage" => "no se pudo crear el megusta"]);
-    }
 
-    public function ListarTodasComentario(Request $request)
-    {
-        return megusta::all();
-    }
-
-    public function ListarUnaComentario(Request $request, $id)
-    {
-        return megusta::findOrFail($id);
-    }
-
-    public function EliminarComentario(Request $request, $id)
-    {
-        $megusta = megusta::findOrFail($id);
-        $megusta->delete();
-        return ['mensaje' => 'Me gusta comentario eliminado'];
-    }
-
-    public function ModificarComentario(Request $request, $id)
-    {
-        $megusta = megusta::findOrFail($id);
-        $megusta->usuario_id = $request->post("usuario_id");
-        $megusta->comentario_id = $request->post("comentario_id");
         $megusta->save();
         return $megusta;
     }
-}
+
+    }

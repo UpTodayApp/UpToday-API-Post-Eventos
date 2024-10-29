@@ -6,24 +6,24 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class megusta extends Model
+class Megusta extends Model
 {
     use HasFactory;
     use SoftDeletes;
     protected $table = "megusta";
 
-    public function Post()
+    public function usuario()
     {
-        return $this->belongsTo(Post::class);
+        return $this->belongsTo(Usuario::class, 'usuario_id', 'id'); 
+    }
+
+    public function post()
+    {
+        return $this->belongsTo(Post::class, 'post_id', 'id'); 
     }
 
     public function comentario()
     {
-        return $this->belongsTo(comentario::class);
-    }
-
-    public function usuario()
-    {
-        return $this->belongsTo(usuario::class);
+        return $this->belongsTo(Comentario::class, 'comentario_id', 'id'); 
     }
 }

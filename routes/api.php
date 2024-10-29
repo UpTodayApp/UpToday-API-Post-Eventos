@@ -23,17 +23,12 @@ Route::delete('/comentario/{d}', [ComentarioController::class, 'Eliminar']);
 Route::put('/comentario/{d}', [ComentarioController::class, 'Modificar']);
 
 
-Route::get('/megustapost', [MegustaController::class, 'ListarTodasPost']);
-Route::get('/megustapost/{d}', [MegustaController::class, 'ListarUnaPost']);
-Route::post('/megustapost', [MegustaController::class, 'CrearPost']);
-Route::delete('/megustapost/{d}', [MegustaController::class, 'EliminarPost']);
-Route::put('/megustapost/{d}', [MegustaController::class, 'ModificarPost']);
+Route::get('/megusta', [MegustaController::class, 'ListarTodasPost']);
+Route::get('/megusta/{d}', [MegustaController::class, 'ListarUnaPost']);
+Route::post('/megusta', [MegustaController::class, 'CrearPost']);
+Route::delete('/megusta/{d}', [MegustaController::class, 'EliminarPost']);
+Route::put('/megusta/{d}', [MegustaController::class, 'ModificarPost']);
 
-Route::get('/Megustacomentario', [MegustaController::class, 'ListarTodasComentario']);
-Route::get('/Megustacomentario/{d}', [MegustaController::class, 'ListarUnaComentario']);
-Route::post('/Megustacomentario', [MegustaController::class, 'CrearComentario']);
-Route::delete('/Megustacomentario/{d}', [MegustaController::class, 'EliminarComentario']);
-Route::put('/Megustacomentario/{d}', [negustaController::class, 'ModificarComentario']);
 
 Route::get('/usuario', [usuarioController::class, 'ListarTodas']);
 Route::get('/usuario/{d}', [usuarioController::class, 'ListarUna']);

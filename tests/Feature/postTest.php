@@ -9,7 +9,7 @@ use Tests\TestCase;
 class postTest extends TestCase
 {
 
-    /*
+    
     public function test_CrearUnPost()
     {
         $estructuraEsperable = [
@@ -140,18 +140,4 @@ class postTest extends TestCase
         ]);
     }
 
-    
-    public function test_EliminarPost()
-    {
-        $response = $this->delete('/api/post/3');
-        $response->assertStatus(200);
-        $response->assertJsonStructure(['mensaje']);
-        $response->assertJsonFragment(['mensaje' => 'Post eliminado']);
-
-        $this->assertDatabaseMissing('post', [
-            'id' => '3',
-            'deleted_at' => null
-        ]);
     }
-    */
-}

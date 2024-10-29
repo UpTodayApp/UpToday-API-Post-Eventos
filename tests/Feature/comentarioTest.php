@@ -9,7 +9,6 @@ use Tests\TestCase;
 class comentarioTest extends TestCase
 {
   
-    /*
 
     public function test_CrearUnComentario()
     {
@@ -137,6 +136,6 @@ class comentarioTest extends TestCase
         $response->assertStatus(404);
     }
 
-    */
+    
 
 }

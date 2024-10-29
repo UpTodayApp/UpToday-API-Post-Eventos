@@ -12,18 +12,28 @@ class Post extends Model
     use SoftDeletes;
     protected $table = "post";
 
-    public function comentario()
-    {
-        return $this->hasMany(Post::class);
-    }
-
-    public function megusta()
-    {
-        return $this->hasMany(Post::class);
-    }
-
     public function usuario()
     {
-        return $this->belongsTo(usuario::class);
+        return $this->belongsTo(Usuario::class, 'usuario_id', 'id');
+    }
+
+    public function comentarios()
+    {
+        return $this->hasMany(Comentario::class, 'post_id', 'id'); 
+    }
+
+    public function eventos()
+    {
+        return $this->belongsToMany(Evento::class, 'p_evento', 'post_id', 'evento_id');
+    }
+
+    public function grupos()
+    {
+        return $this->belongsToMany(Grupo::class, 'p_grupo', 'post_id', 'grupo_id'); 
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(Megusta::class, 'post_id', 'id');
     }
 }

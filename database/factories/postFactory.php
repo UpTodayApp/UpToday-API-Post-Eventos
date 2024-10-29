@@ -7,17 +7,20 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class postFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array
-     */
+
     public function definition()
     {
         return [
-            "usuario_id" => rand(1, 10),
             "contenido" => $this->faker->paragraph(2),
-            "ubicacion" => $this->faker->text(10),
+            "megusta" => rand(0, 100), 
+            "etiquetas" => $this->faker->words(1, true),
         ];
+    }
+
+    public function afterCreating($comentario)
+    {
+        $comentario->publica()->create([
+            'usuario_id' => rand(1, 10) 
+        ]);
     }
 }
