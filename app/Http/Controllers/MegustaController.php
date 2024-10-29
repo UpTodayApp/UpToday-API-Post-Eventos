@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\megusta;
 
-class megustaController extends Controller
+class MegustaController extends Controller
 {
     public function CrearPost(Request $request)
     {

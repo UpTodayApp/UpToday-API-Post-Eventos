@@ -3,16 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\post;
+use App\Models\Post;
 
-class postController extends Controller
+class PostController extends Controller
 {
     public function Crear(Request $request)
     {
         if ($request->has("contenido") && $request->has("usuario_id")) {
 
 
-            $post = new post();
+            $post = new Post();
             $post->usuario_id = $request->post("usuario_id");
             $post->contenido = $request->post("contenido");
             $post->save();
@@ -23,24 +23,24 @@ class postController extends Controller
 
     public function ListarTodas(Request $request)
     {
-        return post::all();
+        return Post::all();
     }
 
     public function ListarUna(Request $request, $id)
     {
-        return post::findOrFail($id);
+        return Post::findOrFail($id);
     }
 
     public function Eliminar(Request $request, $id)
     {
-        $post = post::findOrFail($id);
+        $post = Post::findOrFail($id);
         $post->delete();
         return ['mensaje' => 'post eliminado'];
     }
 
     public function Modificar(Request $request, $id)
     {
-        $post = post::findOrFail($id);
+        $post = Post::findOrFail($id);
         $post->usuario_id = $request->post("usuario_id");
         $post->contenido = $request->post("contenido");
         $post->save();

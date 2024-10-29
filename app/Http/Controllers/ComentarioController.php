@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\comentario;
 
-class comentarioController extends Controller
+class ComentarioController extends Controller
 {
 
     public function Crear(Request $request)
