@@ -17,7 +17,12 @@ class DatabaseSeeder extends Seeder
         \App\Models\evento::factory(10)->create();
         \App\Models\post::factory(10)->create();
         \App\Models\comentario::factory(10)->create();
-        \App\Models\megusta::factory(10)->create();
+        \App\Models\megusta::factory(10)->create([
+            'post_id' => null
+        ]);
  
+        \App\Models\megusta::factory(10)->create([
+            'comentario_id' => null
+        ]);
     }
 }

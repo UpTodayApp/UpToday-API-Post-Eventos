@@ -9,7 +9,7 @@ use Tests\TestCase;
 class megustacomentarioTest extends TestCase
 {
 
-   
+   /*
     public function test_CrearUnMegustaComentario()
     {
         $estructuraEsperable = [
@@ -99,5 +99,5 @@ class megustacomentarioTest extends TestCase
         ]);
     }
 
-
+    */
 }

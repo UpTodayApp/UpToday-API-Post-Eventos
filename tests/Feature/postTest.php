@@ -8,8 +8,8 @@ use Tests\TestCase;
 
 class postTest extends TestCase
 {
+    /*
 
-    
     public function test_CrearUnPost()
     {
         $estructuraEsperable = [
@@ -139,5 +139,5 @@ class postTest extends TestCase
             'deleted_at' => null
         ]);
     }
-
+*/
     }

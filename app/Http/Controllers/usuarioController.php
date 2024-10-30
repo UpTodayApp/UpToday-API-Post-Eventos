@@ -43,7 +43,7 @@ class usuarioController extends Controller
     public function Modificar(Request $request, $id)
     {
         $usuario = usuario::findOrFail($id);
-        $usuario->nombre = $request->post("usuario");
+        $usuario->nombre = $request->post("nombre");
         $usuario->correo = $request->post("correo");
         $usuario->contrasenia = $request->post("contrasenia");
         $usuario->save();

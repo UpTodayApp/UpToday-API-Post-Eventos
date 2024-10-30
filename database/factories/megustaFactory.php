@@ -11,8 +11,8 @@ class megustaFactory extends Factory
     {
         return [
             "usuario_id" => rand(1, 10),
-            "post_id" => $this->faker->randomElement([null, rand(1, 10)]),
-            "comentario_id" => $this->faker->randomElement([null, rand(1, 10)]),
+            "post_id" => rand(1, 10),
+            "comentario_id" => rand(1, 10),
         ];
     }
 }

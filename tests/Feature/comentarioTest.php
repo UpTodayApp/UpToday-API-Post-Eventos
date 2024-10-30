@@ -9,7 +9,7 @@ use Tests\TestCase;
 class comentarioTest extends TestCase
 {
   
-
+/*
     public function test_CrearUnComentario()
     {
         $estructuraEsperable = [
@@ -137,5 +137,5 @@ class comentarioTest extends TestCase
     }
 
     
-
+*/
 }

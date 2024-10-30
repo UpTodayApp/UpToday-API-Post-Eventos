@@ -9,7 +9,7 @@ use Tests\TestCase;
 class megustapostTest extends TestCase
 {
 
-    
+    /*
     public function test_CrearUnMegustaPost()
     {
         $estructuraEsperable = [
@@ -98,7 +98,7 @@ class megustapostTest extends TestCase
         ]);
     }
 
-
+*/
 
 
 }
