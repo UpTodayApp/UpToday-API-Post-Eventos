@@ -8,11 +8,11 @@ use Tests\TestCase;
 
 class eventoTest extends TestCase
 {
-   /*
+
+    
     public function test_CrearUnEvento()
     {
         $estructuraEsperable = [
-            "usuario_id",
             "nombre",
             "participan",
             "fecha",
@@ -26,7 +26,6 @@ class eventoTest extends TestCase
         ];
 
         $datosDeEvento = [
-            "usuario_id" => 1,
             "nombre" => "super evento chachis pistachis",
             "participan" => 1,
             "fecha" => "2001-1-1",
@@ -40,7 +39,6 @@ class eventoTest extends TestCase
         $response->assertJsonFragment($datosDeEvento);
 
         $this->assertDatabaseHas('evento', [
-            "usuario_id" => 1,
             "nombre" => "super evento chachis pistachis",
             "participan" => 1,
             "fecha" => "2001-1-1",
@@ -54,7 +52,6 @@ class eventoTest extends TestCase
     {
         $estructuraEsperable = [
             '*' => [
-                "usuario_id",
                 "nombre",
                 "participan",
                 "fecha",
@@ -76,7 +73,6 @@ class eventoTest extends TestCase
     public function test_ObtenerUnEvento()
     {
         $estructuraEsperable = [
-            "usuario_id",
             "nombre",
             "participan",
             "fecha",
@@ -96,7 +92,6 @@ class eventoTest extends TestCase
     public function test_ModificarEvento()
     {
         $estructuraEsperable = [
-            "usuario_id",
             "nombre",
             "participan",
             "fecha",
@@ -109,7 +104,6 @@ class eventoTest extends TestCase
         ];
 
         $datosDeEvento = [
-            "usuario_id" => 1,
             "nombre" => "para",
             "participan" => 1,
             "fecha" => "2001-1-2",
@@ -122,7 +116,6 @@ class eventoTest extends TestCase
         $response->assertJsonStructure($estructuraEsperable);
         $response->assertJsonFragment($datosDeEvento);
         $this->assertDatabaseHas('evento', [
-            "usuario_id" => 1,
             "nombre" => "para",
             "participan" => 1,
             "fecha" => "2001-1-2",
@@ -161,6 +154,6 @@ class eventoTest extends TestCase
             'deleted_at' => null
         ]);
     }
-*/
+
 
 }

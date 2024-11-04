@@ -9,16 +9,13 @@ class PostController extends Controller
 {
     public function Crear(Request $request)
     {
-        if ($request->has("contenido") && $request->has("usuario_id")) {
-
-
+        if ($request->has("contenido")) {
             $post = new Post();
-            $post->usuario_id = $request->post("usuario_id");
             $post->contenido = $request->post("contenido");
             $post->save();
             return $post;
         }
-        return response()->json(["error mesage" => "sos un salame"]);
+        return response()->json(["error mesage" => "no se pudo crear el post"]);
     }
 
     public function ListarTodas(Request $request)
@@ -41,7 +38,6 @@ class PostController extends Controller
     public function Modificar(Request $request, $id)
     {
         $post = Post::findOrFail($id);
-        $post->usuario_id = $request->post("usuario_id");
         $post->contenido = $request->post("contenido");
         $post->save();
         return $post;

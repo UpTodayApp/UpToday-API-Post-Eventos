@@ -9,11 +9,10 @@ class eventoController extends Controller
 {
     public function Crear(Request $request)
     {
-        if ($request->has("detalles") && $request->has("usuario_id")) {
+        if ($request->has("detalles")) {
 
 
             $evento = new evento();
-            $evento->usuario_id = $request->post("usuario_id");
             $evento->nombre = $request->post("nombre");
             $evento->participan = $request->post("participan");
             $evento->fecha = $request->post("fecha");

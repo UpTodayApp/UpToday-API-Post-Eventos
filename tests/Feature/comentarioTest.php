@@ -9,12 +9,11 @@ use Tests\TestCase;
 class comentarioTest extends TestCase
 {
   
-/*
+
     public function test_CrearUnComentario()
     {
         $estructuraEsperable = [
 
-            "usuario_id",
             "contenido",
             "updated_at",
             "created_at",
@@ -23,8 +22,7 @@ class comentarioTest extends TestCase
         ];
 
         $datosDeComentario = [
-            "usuario_id" => 1,
-            "contenido" => "caballo homosexual de las montañas"
+            "contenido" => "soy un nuevo comentario"
         ];
 
         $response = $this->post('/api/comentario', $datosDeComentario);
@@ -33,8 +31,7 @@ class comentarioTest extends TestCase
         $response->assertJsonFragment($datosDeComentario);
 
         $this->assertDatabaseHas('comentario', [
-            "usuario_id" => 1,
-            "contenido" => "caballo homosexual de las montañas"
+            "contenido" => "soy un comentario"
         ]);
     }
 
@@ -43,7 +40,6 @@ class comentarioTest extends TestCase
         $estructuraEsperable = [
             '*' => [
                 'id',
-                'usuario_id',
                 'contenido',
                 'created_at',
                 'updated_at',
@@ -61,7 +57,6 @@ class comentarioTest extends TestCase
         $estructuraEsperable = [
 
             'id',
-            'usuario_id',
             'contenido',
             'created_at',
             'updated_at',
@@ -94,7 +89,6 @@ class comentarioTest extends TestCase
         $estructuraEsperable = [
 
             'id',
-            'usuario_id',
             'contenido',
             'created_at',
             'updated_at',
@@ -103,8 +97,7 @@ class comentarioTest extends TestCase
         ];
 
         $datosDePost = [
-            "usuario_id" => 2,
-            "contenido" => "ElGatoSapeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+            "contenido" => "soy un comentario editado"
         ];
 
         $response = $this->put('/api/comentario/2', $datosDePost);
@@ -112,8 +105,7 @@ class comentarioTest extends TestCase
         $response->assertJsonStructure($estructuraEsperable);
         $response->assertJsonFragment($datosDePost);
         $this->assertDatabaseHas('comentario', [
-            "usuario_id" => 2,
-            "contenido" => "ElGatoSapeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+            "contenido" => "soy un comentario editado"
         ]);
     }
 
@@ -124,7 +116,7 @@ class comentarioTest extends TestCase
         $response->assertJsonStructure(['mensaje']);
         $response->assertJsonFragment(['mensaje' => 'comentario eliminado']);
 
-        $this->assertDatabaseMissing('Comentario', [
+        $this->assertDatabaseMissing('comentario', [
             'id' => '3',
             'deleted_at' => null
         ]);
@@ -137,5 +129,5 @@ class comentarioTest extends TestCase
     }
 
     
-*/
+
 }

@@ -5,7 +5,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Models\Usuario;
 
-class UsuarioTest extends TestCase
+class usuarioTest extends TestCase
 {
 
     public function test_CrearUnUsuario()
@@ -109,4 +109,5 @@ class UsuarioTest extends TestCase
             'deleted_at' => null,
         ]);
     }
+        
 }
