@@ -23,11 +23,11 @@ Route::delete('/comentario/{d}', [ComentarioController::class, 'Eliminar']);
 Route::put('/comentario/{d}', [ComentarioController::class, 'Modificar']);
 
 
-Route::get('/megusta', [MegustaController::class, 'ListarTodasPost']);
-Route::get('/megusta/{d}', [MegustaController::class, 'ListarUnaPost']);
-Route::post('/megusta', [MegustaController::class, 'CrearPost']);
-Route::delete('/megusta/{d}', [MegustaController::class, 'EliminarPost']);
-Route::put('/megusta/{d}', [MegustaController::class, 'ModificarPost']);
+Route::get('/megusta', [MegustaController::class, 'ListarTodas']);
+Route::get('/megusta/{d}', [MegustaController::class, 'ListarUna']);
+Route::post('/megusta', [MegustaController::class, 'Crear']);
+Route::delete('/megusta/{d}', [MegustaController::class, 'Eliminar']);
+Route::put('/megusta/{d}', [MegustaController::class, 'Modificar']);
 
 
 Route::get('/usuario', [usuarioController::class, 'ListarTodas']);

@@ -22,7 +22,7 @@ class comentarioTest extends TestCase
         ];
 
         $datosDeComentario = [
-            "contenido" => "soy un nuevo comentario"
+            "contenido" => "soy un comentario"
         ];
 
         $response = $this->post('/api/comentario', $datosDeComentario);

@@ -40,7 +40,7 @@ class MegustaController extends Controller
     {
         $megusta = megusta::findOrFail($id);
         $megusta->delete();
-        return ['mensaje' => 'Me gusta post eliminado'];
+        return ['mensaje' => 'megusta eliminado'];
     }
 
     public function Modificar(Request $request, $id)
