@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\p_evento;
+use App\Models\realiza;
 
 class PostController extends Controller
 {
@@ -21,6 +22,13 @@ class PostController extends Controller
                 $p_evento-> evento_id = $request->post("evento_id");
                 $p_evento->save();
                 }
+
+                if($request->post("usuario_id") !== "") {
+                    $realiza = new realiza();
+                    $realiza->post_id = $post->id;
+                    $realiza-> usuario_id = $request->post("usuario_id");
+                    $realiza->save();
+                    }
 
             return $post;
         }
